@@ -1,0 +1,992 @@
+* {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+/* 
+::-webkit-scrollbar-track{
+    background-color: #ce1212;
+} */
+body:not(:has(input:checked))  ::-webkit-scrollbar-track{
+    background-color: black;
+} 
+body:has(input:checked)  ::-webkit-scrollbar-track{
+    background-color: whitesmoke;
+} 
+::-webkit-scrollbar-thumb{
+    background-color: hsl(51, 100%, 40%);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(51, 100%, 50%);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+margin: 0;
+  
+}
+
+.clear_fix {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color_primary);
+}
+
+li {
+    list-style: none;
+}
+
+:root:not(:has(input:checked)) {
+    --default_font_family: "Open Sans", sans-serif;
+    --light_gray_color1: hsl(0, 0%, 15%);
+    --light_gray_color2:#eeeeee;
+    --cheefs_bg_color: hsl(0, 0%, 13%);
+    --nav_color: #171717;
+    --font_family1: "Amatic SC", sans-serif;
+    --color_primary: #ffffff;
+    --button_color: hsl(35, 72%, 44%);
+    --button_color_hover: hsl(35, 72%, 55%);
+    --normal_color_font: #ebebeb;
+    --contact_color:white;
+    --contact_span:white;
+    --form_color:#171717;
+}
+
+:root:has(input:checked) {
+    --default_font_family: "Open Sans", sans-serif;
+    --light_gray_color1: #eeeeee;
+    --light_gray_color2:#eeeeee;
+    --cheefs_bg_color: #ffffff;
+    --nav_color: #ffffff;
+    --font_family1: "Amatic SC", sans-serif;
+    --color_primary: #212529;
+    --button_color: #ce1212;
+    --button_color_hover: hsl(0, 84%, 55%);
+    --normal_color_font: #212529;
+    --contact_color:#848181;
+    --contact_span:black;
+    --form_color:#171717;
+}
+
+/* start header style */
+
+
+.header {
+ background-color: var(--light_gray_color1);
+ min-height: 100vh;
+ width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: var(--nav_color);
+    z-index: 1111111;
+    padding-block: 25px;
+    overflow: auto;
+
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .nav_logo {
+    width: 40%;
+    /* float: left; */
+    font-size: 35px;
+    font-family: var(--default_font_family);
+}
+
+.navbar .nav_logo a {
+    margin: 0;
+    position: relative;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+.close{
+    display: none;
+}
+.navbar .nav_logo a::after {
+    position: absolute;
+    content: "";
+width: 8px;
+height: 8px;
+border-radius: 50%;
+    background-color: var(--button_color);
+    margin: 0;
+    bottom: 20%;
+    
+}
+
+.navbar .nav_list {
+    width: 50%;
+    /* float: left; */
+    margin-top: 10px;
+}
+
+.navbar .nav_list ul {
+    margin: 0;
+}
+
+.navbar .nav_list ul li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    font-size: 20px;
+}
+
+.navbar .nav_list ul li a {
+    color: #848181;
+    transition: all 0.8s;
+    position: relative;
+}
+
+
+
+.navbar .nav_list ul li a:hover{
+  color: var(--color_primary);
+}
+
+ 
+
+
+body:not(body:has(:target)) a[href="#Home"],
+body:has(.home:target) .home_anchor,
+body:has(.chefs:target) .chefs_anchor,
+body:has(.gallery:target) .gallery_anchor,
+body:has(.contact:target) .contact_anchor{
+  color: var(--color_primary);
+}
+
+body:not(body:has(:target)) a[href="#Home"]::before,
+body:has(.home:target) .home_anchor::before,
+body:has(.chefs:target) .chefs_anchor::before,
+body:has(.gallery:target) .gallery_anchor::before,
+    body:has(.contact:target) .contact_anchor::before{
+ width: 100%;
+}
+
+
+.navbar .nav_list ul a::before {
+    position: absolute;
+    content: "";
+    top: 120%;
+    width: 0;
+    height: 2px;
+    transition: all 0.8s;
+    background-color: var(--button_color);
+}
+
+.navbar .nav_list ul a:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+
+
+.navbar .media_options {
+    width: 10%;
+    /* float: left; */
+}
+
+.navbar .nav_mode {
+    float: right;
+    margin-top: 10px;
+    position: relative;
+    margin-right: 20px;
+    
+
+}
+
+
+/* start mode */
+.navbar .nav_mode i{
+      font-size: 25px; 
+}
+
+
+
+
+body:has(input:checked) .cheef1_img::after {
+    content: "";
+    position: absolute;
+    background: url("https://routeegy.github.io/Mealify/assets/img/team-shape.svg");
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    height: 3.75rem;
+
+
+}
+body:has(input:checked) .inner_cheef1{
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+}
+body:has(input:checked) .contact_form{
+    filter: drop-shadow(10px 10px 10px #f0eeee);
+}
+body:has(input:checked) .contact_form input,.contact_form textarea{
+    border:2px solid #eae6e6 ;
+    outline: 1px solid  #eae6e6;
+}
+
+
+.navbar .nav_mode  .sun{
+    color: #eee;
+}
+.moon{
+    color: black;
+}
+.nav_mode input{
+    display: none;
+}
+body:not(:has(input:checked)) .nav_mode .moon{
+    display: none;
+}
+body:has(input:checked) .nav_mode .sun{
+display: none;
+}
+
+
+ .nav_mode label {
+
+    cursor: pointer;
+ 
+}
+
+
+
+
+
+/* end mode */
+.options {
+    float: right;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 30px;
+    display: none;
+}
+
+
+
+
+.home {
+display: flex;
+align-items: center;
+justify-content: center;
+    width: 85%;
+    margin: auto;
+    margin-top: 5.9375rem;
+    padding: 2.5rem 0.3125rem;
+}
+
+.home_info {
+
+    width: 50%;
+
+}
+
+.margin_bottom {
+
+    padding-bottom: 20px;
+}
+
+.home_info p {
+    margin: 5px;
+    color: #848181;
+
+}
+
+h2 {
+    color: var(--color_primary);
+    font-family: var(--font_family1);
+    font-size: 4.0625rem;
+}
+
+.home_info h2 {
+
+margin: 0;
+
+
+
+}
+
+
+.hello {
+    margin: 0;
+    display: flex;
+  
+}
+
+.home_info button {
+ 
+    background-color: var(--button_color);
+    border: none;
+    border-bottom-left-radius: 70px;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+    padding: 15px 40px;
+    margin-left: 0;
+    margin-right: 20px;
+   margin-bottom: 5px;
+}
+
+.home_info .home_video {
+
+    cursor: pointer;
+ 
+}
+
+.home_info .home_video a {
+    color: var(--normal_color_font);
+    transition: all 1s;
+}
+
+.home_info .home_video a:hover {
+    color: var(--button_color);
+}
+
+.home_info .home_video a:hover i {
+    color: var(--button_color);
+}
+
+.home_info .home_video i {
+    background-color: #171717;
+    transition: all 1s;
+    position: relative;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+
+}
+
+.home_info .home_video i::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: -8px;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+    border: 8px solid var(--button_color);
+    border-right-color: transparent;
+    transform: rotate(-45deg);
+    border-bottom-color: transparent;
+}
+
+
+.home_img {
+    width: 50%;
+    text-align: end;
+    filter: drop-shadow(2px 2px 2px gray);
+    
+}
+
+.home_img img {
+    width: 80%;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.home_img img:hover {
+    animation: home_img_animation 0.3s infinite ease-in-out;
+}
+
+@keyframes home_img_animation {
+
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(0.5%) rotate(.4deg);
+    }
+
+    50% {
+        transform: translateY(-0.5%) rotate(.4deg);
+    }
+
+    75% {
+        transform: translateX(0.4%);
+    }
+
+    85% {
+        transform: translateX(-0.4%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* end header */
+
+/* start cheefs style */
+.chefs {
+    background-color: var(--cheefs_bg_color);
+
+}
+
+
+.inner_chefs {
+    width: 90%;
+    margin: auto;
+}
+
+.cheef1 h3 {
+    color: var(--normal_color_font);
+}
+
+.cheef1 p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: #848181;
+}
+
+.cheef1 h3,
+.cheef1 p {
+    margin: 3px;
+
+}
+
+.cheef1 {
+    padding: 20px;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+
+}
+
+.inner_cheef1 {
+    background-color: var(--nav_color);
+    border-radius: 15px;
+    transition: all 0.5s;
+    overflow: hidden;
+    position: relative;
+}
+
+.icons a {
+    color: black;
+}
+
+.icons {
+    position: absolute;
+    overflow: auto;
+    background-color: rgba(185, 180, 180, 0.5);
+    top: 35px;
+    right: 10px;
+    transition: all 0.8s;
+    transform: translate(150%);
+}
+
+.icons i {
+    display: block;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.7s;
+    opacity: 0.4;
+}
+
+.icons i:hover {
+
+    opacity: 1;
+}
+
+.inner_cheef1:hover {
+    transform: scale(1.1);
+}
+
+.inner_cheef1:hover .icons {
+    transform: translate(0%);
+}
+
+.cheef1_info {
+    padding: 10px 30px;
+}
+
+.cheef1 img {
+
+    width: 100%;
+    border-radius: 15px;
+}
+
+.cheef1_img {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.cheef1_img::after {
+    content: "";
+    position: absolute;
+    background: url("https://routeegy.github.io/Mealify/assets/img/team-shape-dark.svg");
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    height: 3.75rem;
+
+
+}
+
+/* end cheef style */
+
+
+
+/* start gallery style */
+/*
+.gallery {
+    background-color: var(--light_gray_color1);
+
+}
+
+.gallery_photoes {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.column1 img {
+    width: 100%;
+
+
+}
+    */
+    .gallery {
+        background-color: var(--light_gray_color1);
+    
+    }
+
+    .gallery_photoes{
+margin: auto;
+width: 90%;
+height: 78.8125rem;
+gap: 1.25rem;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: flex-start;
+
+
+}
+/* .img1{
+order: 1;
+}
+.img5{
+order: 2;
+}
+.img2{
+order: 3;
+}
+.img4{
+order: 4;
+}
+.img3{
+order: 5;
+}
+.img6{
+order: 6;
+}
+.img7{
+order: 7;
+} */
+
+/* :root{
+--gap:1.25rem;
+} */
+.imgage{
+    width: calc(calc(100% - 1.25rem * 2) / 3);
+}
+.imgage img{
+width: 100%;
+height: 100%;
+}
+
+
+.good {
+    position: relative;
+    border: 5px solid white;
+
+}
+
+.galler_animation {
+    position: absolute;
+    overflow: auto;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.info p:first-of-type {
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #eee;
+}
+.info p:last-of-type{
+    color: #eae6e6;
+}
+.good:hover .galler_animation {
+    height: 100%;
+    opacity: 1;
+
+}
+
+/* end gallery style*/
+
+/* start contact style */
+.contact {
+    background-color: var(--cheefs_bg_color);
+  
+}
+
+.contact_info {
+    width: 85%;
+    margin: auto;
+}
+
+.info_formations {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 20px;
+}
+
+.formation1 .icon_formation {
+    background-color: var(--button_color);
+    width: 50px;
+    margin-top: 5px;
+    text-align: center;
+    height: 50px;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.formation1 i {
+    color: var(--nav_color);
+    font-size: 20px;
+
+
+}
+
+.formation1 h4 {
+    margin: 10px 10px 10px;
+    font-size: 20px;
+}
+
+.formation1 p,
+.formation1 a {
+    color: #848181;
+    margin-left: 5px;
+}
+
+.formation1 p span {
+    color: var(--contact_span);
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.inner_formation1 {
+    display: flex;
+    justify-content: left;
+    background-color: var(--light_gray_color1);
+    color: var(--contact_color);
+ width: 100%;
+    padding: 1.5625rem;
+    align-items: center;
+}
+
+.formation1 {
+     margin: 0;
+    overflow: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+
+
+.contact_form {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--nav_color);
+
+}
+
+.contact_form form {
+    padding: 30px;
+    text-align: center;
+}
+
+.contact_form .input_name_info {
+    display: flex;
+    gap: 5px;
+}
+
+
+.contact_form input,.contact_form textarea{
+    transition: all 0.5s;
+}
+.contact_form .input_name_info input {
+    width: 100%;
+    padding: 15px;
+    margin-block: 10px;
+}
+
+.contact_form .input_subject input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.contact_form .input_textarea textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 15px 90px;
+    resize: none;
+}
+
+ .contact_form .input_name_info input:focus,.contact_form .input_subject input:focus , .contact_form textarea:focus {
+    border:2px solid var(--button_color) ;
+    outline: 1px solid var(--button_color);
+}
+
+.contact_form button {
+    padding: 15px 40px;
+    background-color: var(--button_color);
+    border: none;
+    color: var(--cheefs_bg_color);
+    margin: 20px;
+    border-radius: 20px;
+}
+/* end contact  style*/
+
+/* start contact_footer style*/
+
+.contact_footer {
+    background: url(https://routeegy.github.io/Mealify/assets/img/textured-metal-background.jpg);
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.contact_footer a{
+    color: #fff;
+
+}
+
+.footer_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.inner_contact_footer {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+}
+
+.inner_contact_footer h4 {
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.inner_contact_footer .footer_1 .contact_logo {
+    display: flex;
+
+}
+
+.inner_contact_footer .footer_1 .contact_logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.inner_contact_footer .footer_1 .contact_logo h3 {
+    margin-bottom: 0;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.icons_2 {
+    text-align: center;
+}
+
+.icons_2 h4 {
+    border-bottom: 2.5px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.icons_2 i {
+    margin: 5px;
+    font-size: 25px;
+    color: #dfd7d7;
+}
+
+.inner_icons_2 {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+}
+
+.inner_contact_footer .footer_2 .footer_list {
+    display: flex;
+
+}
+
+.inner_contact_footer .footer_2 .footer_list ul {
+    width: 50%;
+    padding: 5px;
+    margin: 5px;
+}
+
+.inner_contact_footer .footer_2 .footer_list ul li span {
+    margin: 3px;
+}
+
+.inner_contact_footer .footer_2 .footer_list ul li {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;
+    margin-right: 10px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    transition: all 1s;
+}
+
+.inner_contact_footer .footer_2 input {
+    width: 70%;
+    padding-block: 10px;
+}
+
+.inner_contact_footer .footer_2 button {
+    border: none;
+    width: 25%;
+    padding-block: 10px;
+    background-color: var(--button_color);
+}
+
+.inner_contact_footer .footer_2 .footer_list ul li:hover {
+    background-color: #252525;
+    transform: translate(7%);
+}
+
+.inner_contact_footer .footer_3 ul li {
+    display: flex;
+}
+
+.inner_contact_footer .footer_3 ul li i {
+    color: var(--button_color);
+    font-size: 25px;
+}
+
+.inner_contact_footer .footer_3 ul li p {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    width: 250px;
+}
+
+
+/* end contact footer */
+
+
+
+
+
+
+
+
+
+
+
+
+/* except */
+.contact_footer i {
+    cursor: pointer;
+}
+
+button {
+    transition: all 0.7s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button_color_hover);
+}
+
+.footer_2 button:hover {
+    background-color: var(--button_color_hover);
+}
+
+.chefs h2,
+.chefs p,
+.gallery h2,
+.gallery p,
+.contact h2,
+.contact p {
+    text-align: center;
+    margin: 0;
+}
+
+.contact p,
+.chefs p,
+.gallery p {
+    color: #848181;
+}
+
+h2 span {
+    color: var(--button_color);
+}
+
+.gallery h2,
+.contact h2 {
+    padding-bottom: 20px;
+}
+
+.gallery,
+.chefs,
+.contact {
+    padding-block: 90px;
+}
+
+/* end except*/
+
+
+
+
